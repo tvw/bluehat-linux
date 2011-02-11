@@ -12,31 +12,31 @@ namespace :version do
   namespace :bump do
     desc "Bump the major version by 1"
     task :major do
-      major = MotoOracle::Questionnaire::VERSION::MAJOR + 1
+      major = Bluehat::VERSION::MAJOR + 1
       minor = 0
       tiny = 0
-      template("lib/motooracle/questionnaire/version.rb.erb", "lib/motooracle/questionnaire/version.rb", binding)
-      sh %{git add --dry-run lib/motooracle/questionnaire/version.rb}
+      template("lib/bluehat/version.rb.erb", "lib/bluehat/version.rb", binding)
+      sh %{git add --dry-run lib/bluehat/version.rb}
       sh %{git commit -m "Version bump to #{major}.#{minor}.#{tiny}"}
     end
 
     desc "Bump the minor version by 1"
     task :minor do
-      major = MotoOracle::Questionnaire::VERSION::MAJOR
-      minor = MotoOracle::Questionnaire::VERSION::MINOR + 1
+      major = Bluehat::VERSION::MAJOR
+      minor = Bluehat::VERSION::MINOR + 1
       tiny = 0
-      template("lib/motooracle/questionnaire/version.rb.erb", "lib/motooracle/questionnaire/version.rb", binding)
-      sh %{git add --dry-run lib/motooracle/questionnaire/version.rb}
+      template("lib/bluehat/version.rb.erb", "lib/bluehat/version.rb", binding)
+      sh %{git add --dry-run lib/bluehat/version.rb}
       sh %{git commit -m "Version bump to #{major}.#{minor}.#{tiny}"}
     end
 
     desc "Bump the tiny version by 1"
     task :tiny do
-      major = MotoOracle::Questionnaire::VERSION::MAJOR
-      minor = MotoOracle::Questionnaire::VERSION::MINOR
-      tiny = MotoOracle::Questionnaire::VERSION::TINY + 1
-      template("lib/motooracle/questionnaire/version.rb.erb", "lib/motooracle/questionnaire/version.rb", binding)
-      sh %{git add --dry-run lib/motooracle/questionnaire/version.rb}
+      major = Bluehat::VERSION::MAJOR
+      minor = Bluehat::VERSION::MINOR
+      tiny = Bluehat::VERSION::TINY + 1
+      template("lib/bluehat/version.rb.erb", "lib/bluehat/version.rb", binding)
+      sh %{git add --dry-run lib/bluehat/version.rb}
       sh %{git commit -m "Version bump to #{major}.#{minor}.#{tiny}"}
     end
   end
