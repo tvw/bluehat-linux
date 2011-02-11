@@ -1,0 +1,11 @@
+# -*- mode: ruby; encoding: utf-8; -*-
+module Bluehat
+  module VERSION #:nodoc:
+    MAJOR = <%=major%>
+    MINOR = <%=minor%>
+    TINY  = <%=tiny%>
+
+    STRING = [MAJOR, MINOR, TINY].join('.')
+    COPYRIGHT = "Bluehat #{STRING} / Copyright (c) 2000-#{Time.now.year} Thomas Volkmar Worm <tvw@s4r.de>"
+  end
+end
